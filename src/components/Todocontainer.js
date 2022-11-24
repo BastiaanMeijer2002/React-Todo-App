@@ -61,7 +61,7 @@ class TodoContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.todos != this.state.todos) {
+        if (prevState.todos !== this.state.todos) {
             localStorage.setItem('todos', JSON.stringify(this.state.todos))
         }
     }

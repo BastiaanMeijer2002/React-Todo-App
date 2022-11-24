@@ -1,5 +1,7 @@
 import React from "react"
 import styles from "./TodoItem.module.css"
+import { FaTrash } from "react-icons/fa"
+
 
 class TodoItem extends React.Component {
 
@@ -54,7 +56,7 @@ class TodoItem extends React.Component {
                         checked={this.props.todo.completed} 
                         onChange={() => this.props.handleChangeProbs(this.props.todo.id)}
                     /> 
-                    <button onClick={() => this.props.deleteTodosProps(this.props.todo.id)}>Delete</button>
+                    <button onClick={() => this.props.deleteTodosProps(this.props.todo.id)}><FaTrash /></button>
                     <span style={this.props.todo.completed ? completedStyle : null}>
                         {this.props.todo.title}
                     </span>
