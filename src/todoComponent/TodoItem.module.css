@@ -3,6 +3,7 @@
     list-style-type: none;
     padding: 17px 0px;
     border-bottom: 1px solid #eaeaea;
+    color: white;
   }
   
   .checkbox {
@@ -26,4 +27,5 @@
     width: 100%;
     padding: 10px;
     border: 1px solid #dfdfdf;
+    margin-bottom: 15px;
   }

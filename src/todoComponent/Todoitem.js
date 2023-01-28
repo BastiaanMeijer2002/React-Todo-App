@@ -1,12 +1,15 @@
 import React from "react"
 import styles from "./TodoItem.module.css"
 import { FaTrash } from "react-icons/fa"
+import {FiUsers} from "react-icons/fi"
+import MembersComponent from "./membersComponent/MembersComponent";
 
 
 class TodoItem extends React.Component {
 
     state = {
         editing: false,
+        showMembers: false
     }
 
     handleEdit = () => {
@@ -23,10 +26,16 @@ class TodoItem extends React.Component {
         }
     }
 
+    showMembers = () => {
+        this.props.showMembers(this.props.todo)
+    }
+
+
+
     render() {
         const completedStyle = {
             fontStyle: "italic",
-            color: "#595959",
+            color: "white",
             opacity: 0.4,
             textDecoration: "line-through",
           }
@@ -55,8 +64,9 @@ class TodoItem extends React.Component {
                         type="checkbox" 
                         checked={this.props.todo.completed} 
                         onChange={() => this.props.handleChangeProbs(this.props.todo.id)}
-                    /> 
+                    />
                     <button onClick={() => this.props.deleteTodosProps(this.props.todo.id)}><FaTrash /></button>
+                    <button onClick={this.showMembers}><FiUsers/></button>
                     <span style={this.props.todo.completed ? completedStyle : null}>
                         {this.props.todo.title}
                     </span>
